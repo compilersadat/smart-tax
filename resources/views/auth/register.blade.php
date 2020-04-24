@@ -27,7 +27,8 @@
                         </div>
                         <div class="form-group ">
                             <div class="md-form">
-                                <input type="text" id="mobile" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" >
+                                <input type="number" id="mobile" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                               maxlength="10" min=0>
                                 <label for="mobile"> {{ __('Phone Number') }}</label>
                               </div>
                         </div>
@@ -64,11 +65,25 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked" required>
+                                    <label class="custom-control-label" for="defaultUnchecked">Terms & Condition</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                            <a href="{{url('login')}}" class="black-text">
+                                    Already have an account? <span class="text-danger">Login</span>.
+                                </a>
+                            </div>
+                        </div>
 
-                        <div class="form-group row mb-0">
+
+                        <div class="form-group row mb-0 mt-4">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-custom btn-md px-5 text-white">
-                                    {{ __('Register') }}
+                                    {{ __('Submit') }}
                                 </button>
                             </div>
                         </div>

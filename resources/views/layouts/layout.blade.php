@@ -19,10 +19,10 @@
 </head>
 <body>
     <section style="background:#F2F2F2;" class="py-2">
-        <div class=" container">
+        <div class=" container-fluid">
             <div class="row">
-                <div class="col-md-5 icon-color">
-                   <i class="fa fa-envelope"></i>&ensp; info@smarttax.com &ensp;/ &ensp; <i class="fa fa-phone"></i>&ensp;+203 158 975
+                <div class="col-md-6 icon-color">
+                   <i class="fa fa-envelope"></i>&ensp; saiful.hafizur.pc@gmail.com / <i class="fa fa-phone"></i>&ensp;647-351-0622 | 647-710-8928 (Cell), 647-965-1359
                 </div>
                 <div class="col-md-6 text-right">
                     <a href="" class="px-2 icon-color">
@@ -43,10 +43,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-4" style="box-shadow:none;border-bottom:1px solid #000;">
 <div class="container">
   <!-- Navbar brand -->
-  <a class="navbar-brand black-text" href="#">SmartTax</a>
+  <a class="navbar-brand black-text" href="{{url('/')}}">SmartTax</a>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  <button class="navbar-toggler black" type="button" data-toggle="collapse" data-target="#basicExampleNav"
     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -57,7 +57,7 @@
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item px-2">
-        <a class="nav-link " href="#">Home
+      <a class="nav-link " href="{{url('/')}}">Home
         </a>
       </li>
       <li class="nav-item px-2">
@@ -73,23 +73,42 @@
           <a class="dropdown-item" href="#">Community volunteer income tax program</a>
         </div>
       </li>
-      <li class="nav-item dropdown px-2">
-        <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Tips & Tools</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Tax Tips</a>
-          <a class="dropdown-item" href="#">	SmartTax Blog</a>
-          <a class="dropdown-item" href="#">Income tax calculator</a>
-        </div>
-      </li>
+     
       <li class="nav-item px-2 mr-4">
         <a class="nav-link " href="#">Contact Us</a>
       </li>
+      @guest
+      
       <li class="nav-item px-2 ">
       <a class="nav-link white-text btn  px-4 btn-custom  btn-md" href="{{url('register')}}" style="color:#fff!important;box-shadow:none;">
         Registration/Sign in
         </a>
       </li>
+    @endguest
+    @auth
+     <li class="nav-item dropdown">
+         
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="{{route('home')}}" class="dropdown-item">
+                                       My Profile 
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endauth
+
 
     </ul>
     <!-- Links -->
@@ -114,29 +133,25 @@
                 <h6 class="text-uppercase  font-weight-bold ">Why SmartTax</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
-                <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                    consectetur
-                    adipisicing elit.</p>
-                <a href="" class="btn btn-outline-white px-5 btn-sm " style="box-shadow: none;">Get Started </a>
+                <p>Have 30 years of combined experience helping our clients.</p>
+                <a href="{{url('register')}}" class="btn btn-outline-white px-5 btn-sm " style="box-shadow: none;">Get Started </a>
             </div>
             <!-- Grid column -->
 
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase  font-weight-bold">Products</h6>
+            <div class="col-md-2  mx-auto mt-3">
+                <h6 class="text-uppercase  font-weight-bold">Services</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
                 <p>
-                    <a class="" href="#">SmartTax Online</a>
+                    <a class="" href="#">Accounting</a>
                 </p>
                 <p>
-                    <a class="" href="#">SmartTax for Corporation</a>
+                    <a class="" href="#">Taxation</a>
                 </p>
-                <p>
-                    <a class="" href="#">Community volunteer income tax program</a>
-                </p>
+               
 
             </div>
             <!-- Grid column -->
@@ -144,19 +159,17 @@
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase font-weight-bold">Tips & Tools</h6>
+            <div class="col-md-3  mx-auto mt-3">
+                <h6 class="text-uppercase font-weight-bold">Latest Blog Posts</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
                 <p>
-                    <a href="#!">Tax & Tips</a>
+                    <a href="#!">Phase-Out of Recaptured ITCs – Reminder</a>
                 </p>
                 <p>
-                    <a href="#!">Smart Tax Blog</a>
+                    <a href="#!">Tax Planning</a>
                 </p>
-                <p>
-                    <a href="#!">Income Tax calculator</a>
-                </p>
+                
             </div>
 
             <!-- Grid column -->
@@ -166,15 +179,15 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-
+ 
                 <p>
-                    <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <i class="fa fa-home mr-3"></i>2972 Danforth Ave, East York, &ensp; &ensp; &ensp; &ensp; &ensp;Ontario M4C 1M6</p>
                 <p>
-                    <i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
+                    <i class="fa fa-envelope mr-3"></i> saiful.hafizur.pc@gmail.com</p>
                 <p>
-                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <i class="fa fa-phone mr-3"></i>647-351-0622 | 647-710-8928&ensp; &ensp; &ensp; &ensp; &ensp; (Cell), 647-965-1359 </p>
                 <p>
-                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                    <i class="fa fa-print mr-3"></i> 647-348-9022</p>
             </div>
             <!-- Grid column -->
 
@@ -184,7 +197,7 @@
         <hr>
 
         <!-- Grid row -->
-        <div class="row d-flex align-items-center py-3">
+        <div class="row d-flex align-items-center py-3 " >
 
             <!-- Grid column -->
             <div class="col-md-7 col-lg-8">
