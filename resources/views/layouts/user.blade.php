@@ -90,16 +90,16 @@
       <div class="sidebar-fixed position-fixed ">
             <div class="text-center m-auto py-2">
 
-            <img src="{{asset('svg/pro.jpg')}}" width="150" height="150" alt="" class="rounded-circle">
-            <a href="#" >
+            <img src="{{asset('uploads/users/'.Auth::user()->profile_image)}}" width="150" height="150" alt="" class="rounded-circle">
+            <a href="{{url('profile')}}" >
 
             <div class="photo-edit p-2" data-toggle="tooltip" title="Edit Image">
-                    <i class="fa fa-camera text-white " style="font-size:15px;"></i>
+                    <i class="fa fa-edit text-white " style="font-size:15px;"></i>
 
             </div>
             </a>
-                <h4 class="h4 p-0 m-0 h4-responsive text-font text-center pt-3">Tauseef Ahmed</h4>
-                <p class="text-font">taueefahmed782@gmail.com</p>
+                <h4 class="h4 p-0 m-0 h4-responsive text-font text-center pt-3">{{@Auth::user()->name}}</h4>
+                <p class="text-font">{{@Auth::user()->email}}</p>
                 <hr>
 
 
@@ -135,7 +135,7 @@
     <!--Main Navigation-->
 @yield('content')
  <!--Footer-->
- <footer class="page-footer text-center font-small mt-5" style="background:#181818;">
+ {{-- <footer class="page-footer text-center font-small mt-5" style="background:#181818;bottom:0px">
 
 
     <!--Copyright-->
@@ -145,7 +145,7 @@
     </div>
     <!--/.Copyright-->
 
-  </footer>
+  </footer> --}}
   <!--/.Footer-->
 
     <!-- JQuery -->

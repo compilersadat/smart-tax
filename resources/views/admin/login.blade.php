@@ -26,7 +26,7 @@
                 <div class="card" style="box-shadow:none;">
                     <div class="card-body px-4 text-font">
                         <h4 class="h4 h4-responive text-center py-2">Admin Login</h4>
-                        <form method="" action="">
+                    <form method="POST" action="{{route('admin.login.post')}}">
                             @csrf
                             <!-- Password -->
                             <div class="md-form">
