@@ -63,29 +63,25 @@
       <li class="nav-item px-2">
         <a class="nav-link " href="#">Why SmartTax</a>
       </li>
-      <!-- Dropdown -->
-      <li class="nav-item dropdown px-2">
-        <a class="nav-link  dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Products</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">SmartTax Online</a>
-          <a class="dropdown-item" href="#">SmartTax for Corporation</a>
-          <a class="dropdown-item" href="#">Community volunteer income tax program</a>
-        </div>
+      <li class="nav-item px-2">
+        <a class="nav-link " href="#">Partners</a>
       </li>
-      
+      <li class="nav-item px-2">
+        <a class="nav-link " href="#">Services</a>
+      </li>
+
       <li class="nav-item px-2 mr-4">
         <a class="nav-link " href="#">Contact Us</a>
       </li>
       @guest
-      
+
       <li class="nav-item px-2 ">
       <a class="nav-link white-text btn  px-4 btn-custom  btn-md" href="{{url('register')}}" style="color:#fff!important;box-shadow:none;">
         Registration/Sign in
         </a>
       </li>
     @endguest
-    
+
 
 
     </ul>
@@ -159,7 +155,7 @@
                 <p>
                     <a class="" href="#">Taxation</a>
                 </p>
-               
+
 
             </div>
             <!-- Grid column -->
@@ -177,7 +173,7 @@
                 <p>
                     <a href="#!">Tax Planning</a>
                 </p>
-                
+
             </div>
 
             <!-- Grid column -->
@@ -187,7 +183,7 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
- 
+
                 <p>
                     <i class="fa fa-home mr-3"></i>2972 Danforth Ave, East York, &ensp; &ensp; &ensp; &ensp; &ensp;Ontario M4C 1M6</p>
                 <p>

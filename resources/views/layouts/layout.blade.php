@@ -21,10 +21,10 @@
     <section style="background:#F2F2F2;" class="py-2">
         <div class=" container-fluid">
             <div class="row">
-                <div class="col-md-6 icon-color">
+                <div class="col-md-6 icon-color px-5">
                    <i class="fa fa-envelope"></i>&ensp; saiful.hafizur.pc@gmail.com / <i class="fa fa-phone"></i>&ensp;647-351-0622 | 647-710-8928 (Cell), 647-965-1359
                 </div>
-                <div class="col-md-6 text-right">
+                <div class="col-md-6 text-right pr-5">
                     <a href="" class="px-2 icon-color">
                         <i class="fa fa-facebook "></i>
                     </a>
@@ -63,22 +63,27 @@
       <li class="nav-item px-2">
         <a class="nav-link " href="#">Why SmartTax</a>
       </li>
-      <!-- Dropdown -->
-      <li class="nav-item dropdown px-2">
-        <a class="nav-link  dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Products</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">SmartTax Online</a>
-          <a class="dropdown-item" href="#">SmartTax for Corporation</a>
-          <a class="dropdown-item" href="#">Community volunteer income tax program</a>
-        </div>
+      <li class="nav-item px-2">
+        <a class="nav-link " href="{{url('partners')}}">Partners</a>
       </li>
-     
+      <li class="nav-item px-2">
+      <a class="nav-link " href="{{url('services')}}">Services</a>
+      </li>
+      <!-- Dropdown -->
+      {{-- <li class="nav-item dropdown px-2">
+        <a class="nav-link  dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Services</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Accounting</a>
+          <a class="dropdown-item" href="#">Taxation</a>
+        </div>
+      </li> --}}
+
       <li class="nav-item px-2 mr-4">
-        <a class="nav-link " href="#">Contact Us</a>
+        <a class="nav-link " href="{{url('contact')}}">Contact Us</a>
       </li>
       @guest
-      
+
       <li class="nav-item px-2 ">
       <a class="nav-link white-text btn  px-4 btn-custom  btn-md" href="{{url('register')}}" style="color:#fff!important;box-shadow:none;">
         Registration/Sign in
@@ -87,14 +92,14 @@
     @endguest
     @auth
      <li class="nav-item dropdown">
-         
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a href="{{route('home')}}" class="dropdown-item">
-                                       My Profile 
+                                       My Profile
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -151,7 +156,7 @@
                 <p>
                     <a class="" href="#">Taxation</a>
                 </p>
-               
+
 
             </div>
             <!-- Grid column -->
@@ -169,7 +174,7 @@
                 <p>
                     <a href="#!">Tax Planning</a>
                 </p>
-                
+
             </div>
 
             <!-- Grid column -->
@@ -179,7 +184,7 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
- 
+
                 <p>
                     <i class="fa fa-home mr-3"></i>2972 Danforth Ave, East York, &ensp; &ensp; &ensp; &ensp; &ensp;Ontario M4C 1M6</p>
                 <p>
